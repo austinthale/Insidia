@@ -8,7 +8,9 @@ public class Minion : MonoBehaviour {
 
     public enum State { Follow, Attack, Regroup }
     public State state = State.Follow;
-    public GameCharacter attackTarget = null;
+    private State prevState = State.Follow;
+    public GameObject attackTarget = null;
+    public float meleeAttackDistanceBuffer = 1.5f;
 
     public MinionSquad Squad { get; private set; }
     private AICharMovement _charMovement;
@@ -65,6 +67,12 @@ public class Minion : MonoBehaviour {
 
     public void MinionUpdate()
     {
+        if (state != prevState)
+        {
+            StateChanged(prevState, state);
+            prevState = state;
+        }
+
         switch (state)
         {
             case State.Attack:
@@ -80,34 +88,95 @@ public class Minion : MonoBehaviour {
         }
     }
 
+    public void StateChanged(State prevState, State newState)
+    {
+        if (newState == State.Follow)
+        {
+            _charMovement.Agent.stoppingDistance = 0.1f;
+        }
+        else if (newState == State.Attack)
+        {
+            //Adjust stopping distance
+            _charMovement.Agent.stoppingDistance = meleeAttackDistanceBuffer;
+        }
+    }
+
     public void AttackUpdate()
     {
-        //Check if out of squad range, if so change to Regroup state and return;
+        //Transition to Regroup state
+        if (Squad && Vector3.Distance(transform.position, Squad.transform.position) > Squad.range)
+        {
+            state = State.Regroup;
+            attackTarget = null;
+            return;
+        }
 
-        //Do all attack logic
-        //Find new best target?
+        //See if there's anything to attack
+        attackTarget = FindAttackTarget();
 
-        //set goal to attack target
+        //Transition to follow state
+        if (!attackTarget)
+        {
+            state = State.Follow;
+            return;
+        }
+
+        //Move to the target
+        _charMovement.Goal = attackTarget.transform.position;
+
+
+        //Find edge-to-edge distance between our colliders
+        //Vector3 targetClosestPoint = attackTarget.GetComponent<Collider>().ClosestPoint(transform.position);
+        //float pointDistance = Vector3.Distance(transform.position, targetClosestPoint);
+
+        if (Vector3.Distance(transform.position, attackTarget.transform.position) <= meleeAttackDistanceBuffer)
+        {
+            print("ATTACCCC!! " + attackTarget.name);
+        }
+    }
+
+    private GameObject FindAttackTarget()
+    {
+        if (Squad.targetSensor.sensedObjects.Count > 0)
+        {
+            return GetClosestToPositionFromList(transform.position, Squad.targetSensor.sensedObjects);
+        }
+
+        return null;
+    }
+
+    private GameObject GetClosestToPositionFromList(Vector3 minionPosition, List<GameObject> objects)
+    {
+        float dist = float.PositiveInfinity;
+        GameObject closestObj = null;
+
+        foreach (var obj in objects)
+        {
+            float newDist = (minionPosition - obj.transform.position).sqrMagnitude;
+            if (newDist <= dist)
+            {
+                dist = newDist;
+                closestObj = obj;
+            }
+        }
+
+        return closestObj;
     }
 
     public void FollowUpdate()
     {
         //Check if out of squad range, if so change to Regroup state and return;
-
-        //if can find something to attack, go to attack state and set that thing as our target
+        //Transition to Regroup state
+        if (Squad && Vector3.Distance(transform.position, Squad.transform.position) > Squad.range)
+        {
+            state = State.Regroup;
+            return;
+        }
 
         //Don't set any movement goals here, it's being managed by the Squad.
     }
 
-    private GameObject GetAttackTarget()
-    {
-        if (Squad.targets.Count > 0)
-        {
-            return Squad.targets[0].gameObject;
-        }
 
-        return null;
-    }
 
     public void RegroupUpdate()
     {

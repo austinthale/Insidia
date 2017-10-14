@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MinionSquad : MonoBehaviour, ISensorListener {
     public int teamNum = 0;
@@ -11,6 +12,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
     public TriggerSensor2 targetSensor;
     public SquadFormation formation;
     public float range = 20f;
+    static public Action alone;
 
     private void Start()
     {
@@ -21,6 +23,8 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
     {
         if (Vector3.Distance(transform.position, other.transform.position) > range)
             return false;
+
+        print(other.name);
 
         //check if it's on another team
         Minion otherMinion = other.GetComponent<Minion>();
@@ -53,20 +57,26 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
 
     private void SquadUpdate()
     {
+        //If there's something to attack...
+        if(targetSensor.sensedObjects.Count > 0)
+        {
+            foreach (var minion in GetMinionsInState(Minion.State.Follow))
+            {
+                //... tell the minions to attack!!
+                minion.state = Minion.State.Attack;
+            }
+        }
+        
         formation.SetMinionGoalsToPositions(transform, GetMinionsInState(Minion.State.Follow));
     }
 
     public void OnSensorEnter(TriggerSensor2 sensor, GameObject other)
     {
-        GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-        if (gameCharacter)
-            targets.Add(gameCharacter);
+
     }
 
     public void OnSensorExit(TriggerSensor2 sensor, GameObject other)
     {
-        GameCharacter gameCharacter = other.GetComponent<GameCharacter>();
-        if (gameCharacter)
-            targets.Remove(gameCharacter);
+
     }
 }

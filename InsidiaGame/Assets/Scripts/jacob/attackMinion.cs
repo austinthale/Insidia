@@ -30,10 +30,11 @@ public class attackMinion : MonoBehaviour {
     void attackEnemyPlayer()
     {
         print("Attacked");
+
     }
     void attackEnemyMinion()
     {
-
+        print("attack minions");
     }
 
     void canAttackPlayer(bool t)
