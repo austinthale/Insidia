@@ -9,20 +9,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dd827e4557cc10439cde9785ee334ad, type: 3}
-  m_Name: Formation PlayerSquare
+  m_Name: Formation Triangle
   m_EditorClassIdentifier: 
   positionsByPriority:
   - positions:
-    - {x: -3, y: 0, z: 0}
-    - {x: 3, y: 0, z: 0}
+    - {x: -2, y: 0, z: -2}
+    - {x: 2, y: 0, z: -2}
   - positions:
-    - {x: -3, y: 0, z: -3}
-    - {x: 0, y: 0, z: -3}
-    - {x: 3, y: 0, z: -3}
+    - {x: -4, y: 0, z: -4}
+    - {x: 0, y: 0, z: -4}
+    - {x: 4, y: 0, z: -4}
   - positions:
+    - {x: -6, y: 0, z: -6}
     - {x: -3, y: 0, z: -6}
-    - {x: 0, y: 0, z: -6}
-    - {x: 4, y: 0, z: -6}
+    - {x: 3, y: 0, z: -6}
+    - {x: 6, y: 0, z: -6}
+  - positions:
+    - {x: -8, y: 0, z: -8}
+    - {x: -4, y: 0, z: -8}
+    - {x: 0, y: 0, z: -8}
+    - {x: 4, y: 0, z: -8}
+    - {x: 8, y: 0, z: -8}
   maxVerticalVariance: 3
   maxNavMeshVariance: 1
   stoppingDistance: 0.5

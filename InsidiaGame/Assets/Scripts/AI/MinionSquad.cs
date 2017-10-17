@@ -8,7 +8,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
 
     public List<Minion> minions = new List<Minion>();
     public int capacity = 10;
-    public List<GameCharacter> targets;
+    public List<GameObject> targets;
     public TriggerSensor2 targetSensor;
     public SquadFormation formation;
     public float range = 20f;
@@ -21,11 +21,6 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
 
     protected virtual bool TargetFilter(GameObject other)
     {
-        if (Vector3.Distance(transform.position, other.transform.position) > range)
-            return false;
-
-        print(other.name);
-
         //check if it's on another team
         Minion otherMinion = other.GetComponent<Minion>();
         if (otherMinion)
@@ -57,6 +52,14 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
 
     private void SquadUpdate()
     {
+        List<GameObject> targetsToRemove = new List<GameObject>(targets.Count);
+        foreach (var target in targets)
+        {
+            if ((target.transform.position - transform.position).sqrMagnitude > (range * range))
+                targetsToRemove.Add(target);
+        }
+        targetsToRemove.ForEach(t => targets.Remove(t));
+
         //If there's something to attack...
         if(targetSensor.sensedObjects.Count > 0)
         {
@@ -72,7 +75,7 @@ public class MinionSquad : MonoBehaviour, ISensorListener {
 
     public void OnSensorEnter(TriggerSensor2 sensor, GameObject other)
     {
-
+        targets.Add(other);
     }
 
     public void OnSensorExit(TriggerSensor2 sensor, GameObject other)

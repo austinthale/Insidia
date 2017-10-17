@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(fileName = "New Squad",menuName = "ArchTeam/AI Formation")]
+[CreateAssetMenu(fileName = "New Squad", menuName = "ArchTeam/AI Formation")]
 public class SquadFormation : ScriptableObject {
 
     [Serializable]
@@ -16,6 +16,7 @@ public class SquadFormation : ScriptableObject {
     public PositionEntry[] positionsByPriority;
     public float maxVerticalVariance = 3f;
     public float maxNavMeshVariance = 1f;
+    public float stoppingDistance = 0.5f;
 
     public void SetMinionGoalsToPositions(Transform baseTransform, List<Minion> units)
     {
