@@ -92,7 +92,8 @@ public class Minion : MonoBehaviour {
     {
         if (newState == State.Follow)
         {
-            _charMovement.Agent.stoppingDistance = 0.1f;
+            if (Squad)
+                _charMovement.Agent.stoppingDistance = Squad.formation.stoppingDistance;
         }
         else if (newState == State.Attack)
         {
@@ -137,9 +138,9 @@ public class Minion : MonoBehaviour {
 
     private GameObject FindAttackTarget()
     {
-        if (Squad.targetSensor.sensedObjects.Count > 0)
+        if (Squad.targets.Count > 0)
         {
-            return GetClosestToPositionFromList(transform.position, Squad.targetSensor.sensedObjects);
+            return GetClosestToPositionFromList(transform.position, Squad.targets);
         }
 
         return null;

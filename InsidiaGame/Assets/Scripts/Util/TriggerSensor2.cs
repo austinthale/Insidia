@@ -37,11 +37,24 @@ public class TriggerSensor2 : MonoBehaviour {
     private void OnEnable()
     {
         _collider.enabled = true;
+        StartCoroutine(this.UpdateCoroutine(4f, ValidateList));
     }
 
     private void OnDisable()
     {
         _collider.enabled = false;
+        StopAllCoroutines();
+    }
+
+    private void ValidateList()
+    {
+        List<GameObject> objsToRemove = sensedObjects.FindAll(obj => !Filter(obj));
+        foreach (var obj in objsToRemove)
+        {
+            if (sensedObjects.Remove(obj))
+                if (_listener != null && (notifyIfInactive || _listenerBehaviour.enabled))
+                    _listener.OnSensorExit(this, obj);
+        }
     }
 
     public void OnTriggerEnter(Collider target)
