@@ -34,3 +34,5 @@ sysinfo.txt
 *.apk
 *.DS_Store
 
+
+*.ide
