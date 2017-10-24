@@ -1,0 +1,323 @@
+fileFormatVersion: 2
+guid: 1a267f08d06cf664aa18cb2eb2c0c344
+timeCreated: 1506375501
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Center
+    100002: Center 1
+    100004: Inner_Leaves
+    100006: Leaf12
+    100008: Leaf13
+    100010: Leaf14
+    100012: Leaf15
+    100014: Leaf16
+    100016: Leaf17
+    100018: Leaf18
+    100020: Leaf19
+    100022: Leaf2
+    100024: Leaf20
+    100026: Leaf21
+    100028: Leaf22
+    100030: Leaf23
+    100032: Leaf24
+    100034: Leaf25
+    100036: Leaf26
+    100038: Leaf27
+    100040: Leaf28
+    100042: Leaf29
+    100044: Leaf30
+    100046: Leaf31
+    100048: Leaf32
+    100050: Leaf33
+    100052: Leaf34
+    100054: Leaves
+    100056: Petal
+    100058: Petal1
+    100060: Petal2
+    100062: Petal3
+    100064: Petal4
+    100066: Petal5
+    100068: Petal6
+    100070: Petal7
+    100072: Petal8
+    100074: Petals
+    100076: polySurface1
+    100078: polySurface1 1
+    100080: polySurface1 10
+    100082: polySurface1 11
+    100084: polySurface1 2
+    100086: polySurface1 3
+    100088: polySurface1 4
+    100090: polySurface1 5
+    100092: polySurface1 6
+    100094: polySurface1 7
+    100096: polySurface1 8
+    100098: polySurface1 9
+    100100: polySurface6
+    100102: polySurface6 1
+    100104: polySurface6 10
+    100106: polySurface6 11
+    100108: polySurface6 2
+    100110: polySurface6 3
+    100112: polySurface6 4
+    100114: polySurface6 5
+    100116: polySurface6 6
+    100118: polySurface6 7
+    100120: polySurface6 8
+    100122: polySurface6 9
+    100124: //RootNode
+    100126: transform1
+    100128: transform10
+    100130: transform11
+    100132: transform12
+    100134: transform13
+    100136: transform14
+    100138: transform15
+    100140: transform16
+    100142: transform17
+    100144: transform18
+    100146: transform19
+    100148: transform2
+    100150: transform20
+    100152: transform21
+    100154: transform22
+    100156: transform23
+    100158: transform24
+    100160: transform3
+    100162: transform4
+    100164: transform5
+    100166: transform6
+    100168: transform7
+    100170: transform8
+    100172: transform9
+    400000: Center
+    400002: Center 1
+    400004: Inner_Leaves
+    400006: Leaf12
+    400008: Leaf13
+    400010: Leaf14
+    400012: Leaf15
+    400014: Leaf16
+    400016: Leaf17
+    400018: Leaf18
+    400020: Leaf19
+    400022: Leaf2
+    400024: Leaf20
+    400026: Leaf21
+    400028: Leaf22
+    400030: Leaf23
+    400032: Leaf24
+    400034: Leaf25
+    400036: Leaf26
+    400038: Leaf27
+    400040: Leaf28
+    400042: Leaf29
+    400044: Leaf30
+    400046: Leaf31
+    400048: Leaf32
+    400050: Leaf33
+    400052: Leaf34
+    400054: Leaves
+    400056: Petal
+    400058: Petal1
+    400060: Petal2
+    400062: Petal3
+    400064: Petal4
+    400066: Petal5
+    400068: Petal6
+    400070: Petal7
+    400072: Petal8
+    400074: Petals
+    400076: polySurface1
+    400078: polySurface1 1
+    400080: polySurface1 10
+    400082: polySurface1 11
+    400084: polySurface1 2
+    400086: polySurface1 3
+    400088: polySurface1 4
+    400090: polySurface1 5
+    400092: polySurface1 6
+    400094: polySurface1 7
+    400096: polySurface1 8
+    400098: polySurface1 9
+    400100: polySurface6
+    400102: polySurface6 1
+    400104: polySurface6 10
+    400106: polySurface6 11
+    400108: polySurface6 2
+    400110: polySurface6 3
+    400112: polySurface6 4
+    400114: polySurface6 5
+    400116: polySurface6 6
+    400118: polySurface6 7
+    400120: polySurface6 8
+    400122: polySurface6 9
+    400124: //RootNode
+    400126: transform1
+    400128: transform10
+    400130: transform11
+    400132: transform12
+    400134: transform13
+    400136: transform14
+    400138: transform15
+    400140: transform16
+    400142: transform17
+    400144: transform18
+    400146: transform19
+    400148: transform2
+    400150: transform20
+    400152: transform21
+    400154: transform22
+    400156: transform23
+    400158: transform24
+    400160: transform3
+    400162: transform4
+    400164: transform5
+    400166: transform6
+    400168: transform7
+    400170: transform8
+    400172: transform9
+    2300000: Center 1
+    2300002: Leaf23
+    2300004: Leaf24
+    2300006: Leaf25
+    2300008: Leaf26
+    2300010: Leaf27
+    2300012: Leaf28
+    2300014: Leaf29
+    2300016: Leaf30
+    2300018: Leaf31
+    2300020: Leaf32
+    2300022: Leaf33
+    2300024: Leaf34
+    2300026: Petal
+    2300028: Petal1
+    2300030: Petal2
+    2300032: Petal3
+    2300034: Petal4
+    2300036: Petal5
+    2300038: Petal6
+    2300040: Petal7
+    2300042: Petal8
+    3300000: Center 1
+    3300002: Leaf23
+    3300004: Leaf24
+    3300006: Leaf25
+    3300008: Leaf26
+    3300010: Leaf27
+    3300012: Leaf28
+    3300014: Leaf29
+    3300016: Leaf30
+    3300018: Leaf31
+    3300020: Leaf32
+    3300022: Leaf33
+    3300024: Leaf34
+    3300026: Petal
+    3300028: Petal1
+    3300030: Petal2
+    3300032: Petal3
+    3300034: Petal4
+    3300036: Petal5
+    3300038: Petal6
+    3300040: Petal7
+    3300042: Petal8
+    4300000: Center
+    4300002: Petal1
+    4300004: Petal2
+    4300006: Petal3
+    4300008: Petal4
+    4300010: Petal5
+    4300012: Petal6
+    4300014: Petal7
+    4300016: Petal8
+    4300018: Petal
+    4300020: Leaf23
+    4300022: Leaf24
+    4300024: Leaf25
+    4300026: Leaf26
+    4300028: Leaf27
+    4300030: Leaf28
+    4300032: Leaf29
+    4300034: Leaf30
+    4300036: Leaf31
+    4300038: Leaf32
+    4300040: Leaf33
+    4300042: Leaf34
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

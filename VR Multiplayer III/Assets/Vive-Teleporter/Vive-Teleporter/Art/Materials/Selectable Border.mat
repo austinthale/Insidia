@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1028 &1
+AssetMetaData:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  guid: 00000000000000003000000000000000
+  pathName: ProjectSettings/TagManager.asset
+  timeCreated: 1499058419
+  originalName: 
+  labels: []
+  assetStoreRef: 0
+  licenseType: 0
+--- !u!1038 &3
+LibraryAssetImporter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_UserData: 
+  m_AssetBundleName: 
+  m_AssetBundleVariant: 
+--- !u!1029 &5
+DefaultAsset:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Selectable Border
+  m_Message: 
+  m_IsWarning: 0
